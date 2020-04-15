@@ -8,7 +8,7 @@ import "./index.css";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
 
-const store = createStore(rootReducer, applyMiddleware);
+const store = createStore(rootReducer, applyMiddleware());
 
 ReactDOM.render(
   <Provider store={store}>
