@@ -2,6 +2,7 @@ import React from "react";
 
 import Header from "./components/Header";
 import Info from "./components/Info";
+import Images from "./components/Images";
 import "./App.css";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <>
       <Header />
       <Info />
+      <Images />
     </>
   );
 }

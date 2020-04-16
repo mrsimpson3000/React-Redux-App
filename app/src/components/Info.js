@@ -10,8 +10,6 @@ const Info = (props) => {
 
   const lSite = props.launch_site && props.launch_site.site_name_long;
   const rocketName = props.data.rocket && props.data.rocket.rocket_name;
-
-  console.log(props.data.launch_date_local);
   return (
     <div className='text-center text-dark font-weight-bold bg-primary p-5'>
       <h1>Latest SpaceX Launch Data</h1>
