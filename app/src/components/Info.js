@@ -10,9 +10,8 @@ const Info = (props) => {
 
   const lSite = props.launch_site && props.launch_site.site_name_long;
   const rocketName = props.data.rocket && props.data.rocket.rocket_name;
-  console.log(rocketName);
 
-  console.log(props.data);
+  console.log(props.data.launch_date_local);
   return (
     <div className='text-center text-dark font-weight-bold bg-primary p-5'>
       <h1>Latest SpaceX Launch Data</h1>
@@ -30,7 +29,12 @@ const Info = (props) => {
       <p>
         Launch Site: <span className='font-weight-bolder'>{lSite}</span>
       </p>
-      <p>Local Launch Time: insert some data here</p>
+      <p>
+        Local Launch Time:{" "}
+        <span className='font-weight-bolder'>
+          {props.data.launch_date_local}
+        </span>
+      </p>
       <p className='text-justify'>{props.data.details}</p>
     </div>
   );
