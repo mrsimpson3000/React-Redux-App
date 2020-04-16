@@ -7,23 +7,39 @@ const Info = (props) => {
   useEffect(() => {
     props.fetchData();
   }, []);
+
+  const lSite = props.launch_site && props.launch_site.site_name_long;
+  const rocketName = props.data.rocket && props.data.rocket.rocket_name;
+  console.log(rocketName);
+
+  console.log(props.data);
   return (
-    <div className='text-center text-dark font-weight-bold bg-primary pt-4 pb-4'>
+    <div className='text-center text-dark font-weight-bold bg-primary p-5'>
       <h1>Latest SpaceX Launch Data</h1>
-      <p className='pt-3'>Mission Name: insert some data here</p>
-      <p>Rocket Name: insert some data here</p>
-      <p>Flight Number: insert some data here</p>
-      <p>Launch Site: insert some data here</p>
+      <p className='pt-3'>
+        Mission Name:{" "}
+        <span className='font-weight-bolder'>{props.data.mission_name}</span>
+      </p>
+      <p>
+        Rocket Name: <span className='font-weight-bolder'>{rocketName}</span>
+      </p>
+      <p>
+        Flight Number:{" "}
+        <span className='font-weight-bolder'>{props.data.flight_number}</span>
+      </p>
+      <p>
+        Launch Site: <span className='font-weight-bolder'>{lSite}</span>
+      </p>
       <p>Local Launch Time: insert some data here</p>
-      <p>Details will go here</p>
+      <p className='text-justify'>{props.data.details}</p>
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     data: state.reducer.data,
+    launch_site: state.reducer.data.launch_site,
     isFetching: state.reducer.isFetching,
     error: state.reducer.error,
   };

@@ -6,6 +6,7 @@ import {
 
 export const initialState = {
   data: {},
+  launch_site: {},
   isFetching: false,
   error: "",
 };
@@ -22,6 +23,7 @@ export const reducer = (state = initialState, action) => {
         ...state,
         isFetching: false,
         data: action.payload,
+        launch_site: action.payload,
         error: "",
       };
     case FETCH_DATA_FAILURE:
